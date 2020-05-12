@@ -1,0 +1,15 @@
+---
+  - name: "Configure Localhost for AWS account"
+    hosts: local
+    gather_facts: no
+    vars_prompt:
+      - name: Region
+        prompt: "Enter AWS Region: "
+        private: no
+      - name: Output
+        prompt: "Enter awscli commands output formate: "
+        private: no
+        default: json
+    roles:
+      - AwsSetupOnLocalHost
+    
