@@ -1,0 +1,2 @@
+[local]
+icmpcxapp-ansible-01.iservermate.local ansible_connection=local

@@ -1,0 +1,5 @@
+---
+# defaults file for AwsSetupOnLocalHost
+packages:
+ - boto
+ - boto3
