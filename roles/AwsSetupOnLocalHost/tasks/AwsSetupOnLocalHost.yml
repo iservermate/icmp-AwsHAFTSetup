@@ -1,13 +1,18 @@
 ---
+  - name: "download awscli package"
+    unarchive:
+      src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      dest: /tmp
+      remote_src: yes
+
+  - name: "Install awscli"
+    shell: /tmp/aws/install --update
+
+
   - name: "install required package"
     pip:
       name: "{{ packages }}"
 
-  - name: "install awscli package"
-    yum:
-      name: "awscli"
-      state: present
-      update_cache: yes
 
   - name: Create .aws directory
     file:
