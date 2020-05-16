@@ -3,3 +3,4 @@
 packages:
  - boto
  - boto3
+ - botocore

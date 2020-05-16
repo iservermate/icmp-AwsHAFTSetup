@@ -1,17 +1,22 @@
 ---
+  - name: "download awscli package"
+    unarchive:
+      src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      dest: /tmp
+      remote_src: yes
+
+  - name: "Install awscli"
+    shell: /tmp/aws/install --update
+
+
   - name: "install required package"
     pip:
       name: "{{ packages }}"
 
-  - name: "install awscli package"
-    yum:
-      name: "awscli"
-      state: present
-      update_cache: yes
 
   - name: Create .aws directory
     file:
-      path: ~/.aws
+      path: /home/prod_ansible/.aws
       state: directory
       owner: prod_ansible
       group: prod_ansible
@@ -19,7 +24,7 @@
   - name: "Copy config "
     template:
       src: config.j2
-      dest: ~/.aws/config
+      dest: /home/prod_ansible/.aws/config
       owner: prod_ansible
       group: prod_ansible
       mode: '0600'
@@ -27,7 +32,7 @@
   - name: "Copy credentials"
     copy:
       src: credentials
-      dest: ~/.aws/credentials
+      dest: /home/prod_ansible/.aws/credentials
       owner: prod_ansible
       group: prod_ansible
       mode: '0600'
