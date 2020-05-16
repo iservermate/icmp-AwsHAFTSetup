@@ -1,0 +1,21 @@
+---
+  - name: create a VPC with dedicated tenancy and a couple of tags
+    ec2_vpc_net:
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      name: "{{ VpcName }}"
+      cidr_block: "{{ CidrBlock }}"
+      region: "{{ RegionName }}"
+      dns_hostnames: yes
+      tenancy: default
+#      dhcp_opts_id: yes
+      dns_hostnames: yes
+      dns_support: yes
+      state: present
+    register: result
+  - name: "Set VPC id in Variable"
+    set_fact:
+      vpc_id: "{{ result.vpc.id }}"
+  - debug:
+      msg:
+      - "{{ vpc_id }}"
