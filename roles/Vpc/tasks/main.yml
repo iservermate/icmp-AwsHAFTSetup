@@ -1,0 +1,5 @@
+---
+# tasks file for Vpc
+  - import_tasks:  Vpc.yml
+    tags:
+      - CreateVPC

@@ -1,0 +1,5 @@
+---
+# tasks file for AwsSetupOnLocalHost
+  - import_tasks: AwsSetupOnLocalHost.yml
+    tags:
+      - AwsConfigure

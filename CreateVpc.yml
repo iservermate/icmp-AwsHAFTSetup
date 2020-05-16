@@ -1,0 +1,18 @@
+---
+  - name: "Create & Configure VPC"
+    hosts: local
+    gather_facts: no
+    vars_prompt:
+      - name: VpcName
+        prompt: "Enter VPC Name: "
+        private: no
+      - name: CidrBlock
+        prompt: "Enter CIDR range: "
+        private: no
+        default: 10.0.0.0/16
+      - name: RegionName
+        prompt: "Enter Region name to create VPC: "
+        private: no
+        default: ca-central-1
+    roles:
+      - Vpc
