@@ -1,5 +1,5 @@
 ---
-  - name: create a VPC with dedicated tenancy and a couple of tags
+  - name: create a VPC with default tenancy and a couple of tags
     ec2_vpc_net:
       aws_access_key: "{{ aws_access_key_id }}"
       aws_secret_key: "{{ aws_secret_access_key }}"
@@ -20,14 +20,28 @@
       msg:
       - "{{ region_id }}"
 
+
   - name: "Set VPC id in Variable"
     set_fact:
       vpc_id: "{{ result.vpc.id }}"
   - debug:
       msg:
       - "{{ vpc_id }}"
+
   - name: "Set IGW Name in Variable"
     set_fact:
       IGW: "{{ IGWName }}"
   - debug:
       msg: "{{ IGW }}"
+
+  - name: "Set Public Routing Table Name in Variable"
+    set_fact:
+      PubRT: "{{ PubRtable }}"
+  - debug:
+      msg: "{{ PubRT }}"
+
+  - name: "Set Private Routing Table Name in Variable"
+    set_fact:
+      PrivRT: "{{ PrivRtable }}"
+  - debug:
+      msg: "{{ PrivRT }}"

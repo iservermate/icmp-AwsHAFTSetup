@@ -1,3 +1,4 @@
 ---
   - import_playbook: CreateVpc.yml
   - import_playbook: CreateIGW.yml
+  - import_playbook: CreateRT.yml

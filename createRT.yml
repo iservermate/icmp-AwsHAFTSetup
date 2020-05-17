@@ -3,9 +3,11 @@
     hosts: local
     gather_facts: off
     tasks:
-    - name: Getting RT id
-      ec2_vpc_route_table_info:
+ #   - name: Getting RT id
+    - ec2_vpc_route_table_info:
         region: ca-central-1
-      register: result
-    - debug:
-        msg: result
+        filters: 
+          vpc-id: vpc-09fec9dc130019255
+#      register: re
+#    - debug:
+#        msg: result

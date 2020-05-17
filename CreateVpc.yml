@@ -6,16 +6,38 @@
       - name: VpcName
         prompt: "Enter VPC Name: "
         private: no
+        default: icmpvpc-cac1-01
+
       - name: CidrBlock
         prompt: "Enter CIDR range: "
         private: no
         default: 10.0.0.0/16
+
       - name: RegionName
         prompt: "Enter Region name to create VPC: "
         private: no
         default: ca-central-1
+
       - name: IGWName
         prompt: "Enter Internet Gateway Name: "
         private: no
+        default: icmpig-cac1-01
+#
+      - name: PubRtable
+        prompt: "Enter Public Routing Table Name: "
+        private: no
+        default: icmppubrt-cac1-01
+
+      - name: PrivRtable
+        prompt: "Enter Private Routing Table Name: "
+        private: no
+        default: icmpprirt-cac1-01
+#     - name: PSubnet
+#        prompt: "Enter Public Subnet Name: "
+#        private: no
+#      - name: PriSubnet
+#        prompt: "Enter Private Subnet Name: "
+#        private: no
+
     roles:
       - Vpc
