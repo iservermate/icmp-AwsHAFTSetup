@@ -1,0 +1,5 @@
+---
+# tasks file for InternetGateway
+  - import_tasks: CreateIGW.yml
+    tags:
+      - CreateInternetGW

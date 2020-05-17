@@ -1,0 +1,11 @@
+---
+  - name: "Creat Internet Gateway"
+    hosts: local
+    gather_facts: off
+#    vars_prompt:
+#      - name: IGWRegion
+#        prompt: "Enter Region for Internet-GW: "
+#        private: no
+#        default: ca-central-1
+    roles:
+      - InternetGateway

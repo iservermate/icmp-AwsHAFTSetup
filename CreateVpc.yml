@@ -14,5 +14,8 @@
         prompt: "Enter Region name to create VPC: "
         private: no
         default: ca-central-1
+      - name: IGWName
+        prompt: "Enter Internet Gateway Name: "
+        private: no
     roles:
       - Vpc
