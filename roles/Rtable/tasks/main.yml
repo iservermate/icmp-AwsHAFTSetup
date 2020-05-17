@@ -1,0 +1,8 @@
+---
+# tasks file for Rtable
+  - import_tasks: PubRT.yml
+    tags:
+      - CreatePubRT
+  - import_tasks: PrivRT.yml
+    tags:
+      - CreatePrivRT

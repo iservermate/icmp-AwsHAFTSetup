@@ -1,5 +1,5 @@
 ---
-  - name: "Creat Internet Gateway"
+  - name: "Creat Routing Tables"
     hosts: local
     gather_facts: off
 #    vars_prompt:
@@ -8,4 +8,4 @@
 #        private: no
 #        default: ca-central-1
     roles:
-      - Igw
+      - Rtable
