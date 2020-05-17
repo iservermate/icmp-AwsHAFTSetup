@@ -8,7 +8,6 @@
       region: "{{ RegionName }}"
       dns_hostnames: yes
       tenancy: default
-#      dhcp_opts_id: yes
       dns_hostnames: yes
       dns_support: yes
       state: present
