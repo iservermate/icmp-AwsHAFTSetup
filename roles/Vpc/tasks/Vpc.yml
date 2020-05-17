@@ -13,9 +13,22 @@
       dns_support: yes
       state: present
     register: result
+
+  - name: "Settings region in Variable"
+    set_fact:
+      region_id: "{{ RegionName }}"
+  - debug:
+      msg:
+      - "{{ region_id }}"
+
   - name: "Set VPC id in Variable"
     set_fact:
       vpc_id: "{{ result.vpc.id }}"
   - debug:
       msg:
       - "{{ vpc_id }}"
+  - name: "Set IGW Name in Variable"
+    set_fact:
+      IGW: "{{ IGWName }}"
+  - debug:
+      msg: "{{ IGW }}"
