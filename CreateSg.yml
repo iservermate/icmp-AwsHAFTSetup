@@ -1,0 +1,7 @@
+---
+  - name: "Creat Internet Gateway"
+    hosts: local
+    gather_facts: off
+    roles:
+      - SGroup
+

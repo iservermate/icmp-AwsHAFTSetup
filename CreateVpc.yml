@@ -89,6 +89,18 @@
         prompt: "Enter Private CIDR Name in AZ-2: "
         private: no
         default: 10.0.11.0/24
+
+#Bsation Host AMI id
+      - name: Bhost
+        prompt: "Enter AMI Id for Bastion Host: "
+        private: no
+        default: ami-054362537f5132ce2
+
+      - name: BhostN
+        prompt: "Enter AMI Id for Bastion Host: "
+        private: no
+        default: icmpbhost-a-1
+
     roles:
       - Vpc
-#
+

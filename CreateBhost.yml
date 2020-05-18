@@ -1,0 +1,7 @@
+---
+  - name: "Creat Bastion Host"
+    hosts: local
+    gather_facts: off
+    roles:
+      - BastionHost
+

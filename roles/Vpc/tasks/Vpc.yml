@@ -105,3 +105,9 @@
       PriCidr_1b: "{{ PriCIDR_b_1 }}"
   - debug:
       msg: "{{ PriCidr_1b }}"
+  - name: "Set Bastion Hsot AMI ID in Variable"
+    set_fact:
+      BhostAmi: "{{ Bhost }}"
+  - name: "Set Bastion Hsot Name in Variable"
+    set_fact:
+      BhostName: "{{ BhostN }}"

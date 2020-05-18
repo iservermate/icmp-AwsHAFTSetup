@@ -1,0 +1,17 @@
+---
+  - ec2:
+      key_name: icmpkp-01
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      instance_tags: 
+        Name: "{{ BhostName }}"
+      instance_type: t2.micro
+      image: "{{ BhostAmi }}"
+      wait: yes
+      wait_timeout: 500
+      count: 1
+      monitoring: no
+      group_id: "{{ BhSG_id }}"
+      vpc_subnet_id: "{{ PubSub_1AA }}"
+      assign_public_ip: yes
+      region: "{{ region_id }}"

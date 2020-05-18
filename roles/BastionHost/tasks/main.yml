@@ -1,0 +1,5 @@
+---
+# tasks file for BastionHost
+  - import_tasks: Bhost.yml
+    tags:
+      - CreateBhost

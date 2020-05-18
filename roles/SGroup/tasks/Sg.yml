@@ -1,0 +1,35 @@
+---
+#  - name: create Security Gruop for Bastion Host
+#    ec2_group:
+#      aws_access_key: "{{ aws_access_key_id }}"
+#      aws_secret_key: "{{ aws_secret_access_key }}"
+#      name: icmpbhost-sga-1
+#      description: Allow Ssh from my IP
+#      vpc_id: "{{ vpc_id }}"
+#      region: "{{ region_id}}"
+#      rules:
+#        - proto: "tcp"
+#          from_port: "22"
+#          to_port: "22"
+#          cidr_ip: 99.245.44.17/32
+##          rule_desc: allow all on port 80
+  - name: create Security Gruop for Bastion Host
+    ec2_group:
+      name: "icmpbhost-sga-1"
+      description: "SSH Access from my public IP"
+      vpc_id: "{{ vpc_id }}"
+      region: "{{ region_id }}"
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      rules:
+        - proto: "tcp"
+          from_port: "22"
+          to_port: "22"
+          cidr_ip: "99.245.44.17/32"
+    register: result
+  - name: "Set Bhost Security group id in Variable" 
+    set_fact:
+      BhSG_id: "{{ result.group_id }}"
+  - debug:
+      msg:
+        - "{{ BhSG_id }}"
