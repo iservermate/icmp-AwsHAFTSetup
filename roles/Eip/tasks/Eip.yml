@@ -14,10 +14,11 @@
   - name: Create Elastic IP
     shell: >
       aws ec2 allocate-address --domain vpc --query AllocationId | tr -d '"'
-    register: eip
+    register: result
 
-  - debug: var=eip
-
-  - name: Set EIP in variable
+  - name: "Set Elastic IP in Variable"
     set_fact:
-      my_elastic_ip: "{{ eip.stdout }}"
+      my_elastic_ip: "{{ result.stdout_lines }}"
+  - debug:
+      msg:
+      - "{{ my_elastic_ip }}"

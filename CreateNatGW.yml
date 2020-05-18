@@ -1,0 +1,7 @@
+---
+  - name: "Creat NAT Gateway"
+    hosts: local
+    gather_facts: off
+    roles:
+      - NatGW
+

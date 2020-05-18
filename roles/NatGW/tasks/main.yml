@@ -1,2 +1,5 @@
 ---
 # tasks file for NatGW
+   - import_tasks: NatGW.yml
+     tags:
+       - CreateNatGW

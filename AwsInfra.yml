@@ -2,6 +2,10 @@
   - import_playbook: CreateVpc.yml
   - import_playbook: CreateIGW.yml
   - import_playbook: CreateSubnets.yml
+#
+# check if we can do this by using ansible modules
   - import_playbook: CreateEip.yml
+#
+  - import_playbook: CreateNatGW.yml
   - import_playbook: CreateRT.yml
   - import_playbook: PrintIds.yml

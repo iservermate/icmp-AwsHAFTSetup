@@ -1,16 +1,32 @@
 ---
   - name: "Create NAT GW for Private Subnets"
-  ec2_vpc_nat_gateway:
-    state: present
-    subnet_id: "{{ PubSub_1B }}"
-    wait: yes
-    region: "{{ region_id}}"
-    if_exist_do_not_create: true
-  register: result
-  - name: "Set NAT-GW id in Variable"
+#    shell: >
+#      aws ec2 create-nat-gateway \
+#      --subnet-id {{ PubSub_1B }} \
+#      --allocation-id {{ my_elastic_ip  }} \
+#      --query NatGateway.NatGatewayId | tr -d '"'
+#    register: result
+#
+#  - name: "Set Nat Gateway ID in variable"
+#    set_fact:
+#      nat_gateway_id_azb: "{{ result }}"
+#  - debug:
+#      msg:
+#      - "{{ nat_gateway_id_azb }}" 
+
+# We pause a few seconds for the NAT Gateways to be ready.
+#  - pause: seconds=5
+    - name: Create new nat gateway using an allocation-id.
+      ec2_vpc_nat_gateway:
+        state: present
+        subnet_id: "{{ PrivSub_1A }}"
+        wait: yes
+        region: "{{ region_id }}"
+        if_exist_do_not_create: true
+      register: result
+  - name: "Set Nat Gateway ID in variable"
     set_fact:
-      Nat_gw_id: "{{ result.stdout }}"
+      nat_gateway_id_azb: "{{ result }}"
   - debug:
       msg:
-        - "{{ Nat_gw_id }}" 
-#
+      - "{{ nat_gateway_id_azb }}"
