@@ -16,17 +16,17 @@
 
 # We pause a few seconds for the NAT Gateways to be ready.
 #  - pause: seconds=5
-    - name: Create new nat gateway using an allocation-id.
-      ec2_vpc_nat_gateway:
-        state: present
-        subnet_id: "{{ PrivSub_1A }}"
-        wait: yes
-        region: "{{ region_id }}"
-        if_exist_do_not_create: true
-      register: result
+#  - name: Create new nat gateway using an allocation-id.
+    ec2_vpc_nat_gateway:
+      state: present
+      subnet_id: "{{ PrivSub_1A }}"
+      region: "{{ region_id }}"
+      if_exist_do_not_create: true
+      wait: yes
+    register: result
   - name: "Set Nat Gateway ID in variable"
     set_fact:
-      nat_gateway_id_azb: "{{ result }}"
+      nat_gateway_id_azb: "{{ result.nat_gateway_id }}"
   - debug:
       msg:
       - "{{ nat_gateway_id_azb }}"

@@ -4,7 +4,7 @@
   - import_playbook: CreateSubnets.yml
 #
 # check if we can do this by using ansible modules
-  - import_playbook: CreateEip.yml
+#  - import_playbook: CreateEip.yml
 #
   - import_playbook: CreateNatGW.yml
   - import_playbook: CreateRT.yml

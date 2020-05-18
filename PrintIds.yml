@@ -12,7 +12,7 @@
           - "1st Private Subnet ID in AZ-1= {{ PrivSub_1A }}"
           - "2nd Public Subnet ID in AZ-2= {{ PubSub_1B }}"
           - "2nd Private Subnet ID in AZ-2= {{ PrivSub_1B }}"
-          - "My Elastic IP= {{ my_elastic_ip }}"
+#          - "My Elastic IP= {{ my_elastic_ip }}"
           - "NAT Gateway= {{ nat_gateway_id_azb }}"
           - "Public Routing Table ID= {{ pubrt_id }}"
           - "Private Rouiting Table ID= {{ privrt_id }}"
