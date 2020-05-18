@@ -11,7 +11,7 @@
     register: result
   - name: "Set Private Routing Table id in Variable"
     set_fact:
-      pubrt_id: "{{ result.route_table.id }}"
+      privrt_id: "{{ result.route_table.id }}"
   - debug:
       msg:
-        - "{{ pubrt_id }}"
+        - "{{ privrt_id }}"

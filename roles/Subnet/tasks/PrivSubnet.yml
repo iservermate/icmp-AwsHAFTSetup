@@ -1,0 +1,39 @@
+---
+  - name: "Creat 1st Private Subnet in AZ-1"
+    ec2_vpc_subnet:
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      state: present
+      cidr: "{{ PriCidr_1a }}"
+      region: "{{ region_id }}"
+      az: "{{ AZ_1 }}"
+      vpc_id: "{{ vpc_id }}"
+      tags:
+        Name: "{{ PriSub_1a }}"
+    register: result
+  - name: "Settings 1st Private Subnet-ID in Variable"
+    set_fact:
+      PrivSub_1A: "{{ result.subnet.id }}"
+  - debug:
+      msg:
+        - "{{ PrivSub_1A }}"
+
+
+  - name: "Creat 2nd Private Subnet in AZ-2"
+    ec2_vpc_subnet:
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      state: present
+      cidr: "{{ PriCidr_1b }}"
+      region: "{{ region_id }}"
+      az: "{{ AZ_2 }}"
+      vpc_id: "{{ vpc_id }}"
+      tags:
+        Name: "{{ PriSub_1b }}"
+    register: result
+  - name: "Settings 2nd Private Subnet-ID in Variable"
+    set_fact:
+      PrivSub_1B: "{{ result.subnet.id }}"
+  - debug:
+      msg:
+        - "{{ PrivSub_1B }}"

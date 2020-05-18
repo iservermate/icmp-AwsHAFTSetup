@@ -1,0 +1,6 @@
+---
+  - name: "Creating Public and Private Subnet in Multiple AZ's"
+    hosts: local
+    gather_facts: off
+    roles:
+      - Subnet

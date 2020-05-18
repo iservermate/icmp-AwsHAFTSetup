@@ -6,38 +6,88 @@
       - name: VpcName
         prompt: "Enter VPC Name: "
         private: no
-        default: icmpvpc-cac1-01
-
+        default: icmpvpc-01
+#CIDR FOR VPC
       - name: CidrBlock
         prompt: "Enter CIDR range: "
         private: no
         default: 10.0.0.0/16
-
+#REGION NAME
       - name: RegionName
         prompt: "Enter Region name to create VPC: "
         private: no
         default: ca-central-1
 
+#INTERNET GATEWAY
       - name: IGWName
         prompt: "Enter Internet Gateway Name: "
         private: no
-        default: icmpig-cac1-01
-#
-      - name: PubRtable
+        default: icmpig-01
+##Routing Table
+#Public RT
+      - name: PubRtable_a_01
         prompt: "Enter Public Routing Table Name: "
         private: no
-        default: icmppubrt-cac1-01
-
-      - name: PrivRtable
+        default: icmppubrt-a-01
+#Private RT
+      - name: PrivRtable_b_01
         prompt: "Enter Private Routing Table Name: "
         private: no
-        default: icmpprirt-cac1-01
-#     - name: PSubnet
-#        prompt: "Enter Public Subnet Name: "
-#        private: no
-#      - name: PriSubnet
-#        prompt: "Enter Private Subnet Name: "
-#        private: no
+        default: icmpprivrt-b-01
 
+####AZ 1
+      - name: ca_central_1A
+        prompt: "Enter Primary Availability Zone name: "
+        private: no
+        default: ca-central-1a
+
+##Subnets
+#Public Subnet AZ-1
+      - name: PubSubnet_a_1
+        prompt: "Enter Public subnet name in AZ-1: "
+        private: no
+        default: icmppubsub-a-01
+#Public Subnet Cidr-AZ-1
+      - name: PubCIDR_a_1
+        prompt: "Enter Public CIDR Name in AZ-1: "
+        private: no
+        default: 10.0.1.0/24
+#Private Subnet AZ-1
+      - name: PriSubnet_a_1
+        prompt: "Enter Private Subnet Name in AZ-1: "
+        private: no
+        default: icmpprivsub-a-01
+#Private Subnet CIDR AZ-1
+      - name: PriCIDR_a_1
+        prompt: "Enter Private CIDR Name in AZ-1: "
+        private: no
+        default: 10.0.2.0/24
+
+##AZ-2
+      - name: ca_central_1B
+        prompt: "Enter Secondary Availability Zone name: "
+        private: no
+        default: ca-central-1b
+
+#Public Subnet AZ-2
+      - name: PubSubnet_b_1
+        prompt: "Enter Public Subnet Name in AZ-2: "
+        private: no
+        default: icmppubsub_b_01
+#Public Subnet Cidr-AZ-2
+      - name: PubCIDR_b_1
+        prompt: "Enter Public CIDR Name in AZ-2: "
+        private: no
+        default: 10.0.10.0/24
+#Private Subnet AZ-2
+      - name: PriSubnet_b_1
+        prompt: "Enter Private Subnet Name in AZ-2: "
+        private: no
+        default: icmpprivsub_b_01
+#Private Subnet Cidr-AZ-2
+      - name: PriCIDR_b_1
+        prompt: "Enter Private CIDR Name in AZ-2: "
+        private: no
+        default: 10.0.11.0/24
     roles:
       - Vpc

@@ -1,0 +1,39 @@
+---
+  - name: "Creat 1st Public Subnet in AZ-1"
+    ec2_vpc_subnet:
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      state: present
+      cidr: "{{ PubCidr_1a }}"
+      region: "{{ region_id }}"
+      az: "{{ AZ_1 }}"
+      vpc_id: "{{ vpc_id }}"
+      tags:
+        Name: "{{ PubSub1a }}"
+    register: result
+  - name: "Settings 1st Public Subnet-ID in Variable"
+    set_fact:
+      PubSub_1AA: "{{ result.subnet.id }}"
+  - debug:
+      msg:
+      - "{{ PubSub_1AA }}"
+
+
+  - name: "Creat 2nd Public Subnet in AZ-2"
+    ec2_vpc_subnet:
+      aws_access_key: "{{ aws_access_key_id }}"
+      aws_secret_key: "{{ aws_secret_access_key }}"
+      state: present
+      cidr: "{{ PubCidr_1b }}"
+      region: "{{ region_id }}"
+      az: "{{ AZ_2 }}"
+      vpc_id: "{{ vpc_id }}"
+      tags:
+        Name: "{{ PubSub1b }}"
+    register: result
+  - name: "Settings 2nd Public Subnet-ID in Variable"
+    set_fact:
+      PubSub_1B: "{{ result.subnet.id }}"
+  - debug:
+      msg:
+      - "{{ PubSub_1B }}"
