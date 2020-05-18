@@ -1,0 +1,5 @@
+---
+# tasks file for Eip
+  - import_tasks: Eip.yml
+    tags:
+      - ElasticIP

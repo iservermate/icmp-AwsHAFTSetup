@@ -13,6 +13,6 @@
           - "1st Public Subnet ID in AZ-1= {{ PubSub_1AA }}"
           - "1st Private Subnet ID in AZ-1= {{ PrivSub_1A }}"
           - "2nd Public Subnet ID in AZ-2= {{ PubSub_1B }}"
-          - "2nd Private Subnet ID in AZ-2= {{ PrivSub_1A }}"
+          - "2nd Private Subnet ID in AZ-2= {{ PrivSub_1B }}"
 #          - "Bastion Host= {{  }}"
 #          - "NAT Gateway= {{  }}"

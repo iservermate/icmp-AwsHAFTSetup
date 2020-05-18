@@ -1,0 +1,15 @@
+---
+  - name: "Create NAT GW for Private Subnets"
+  ec2_vpc_nat_gateway:
+    state: present
+    subnet_id: "{{ PubSub_1B }}"
+    wait: yes
+    region: "{{ region_id}}"
+    if_exist_do_not_create: true
+  register: result
+  - name: "Set NAT-GW id in Variable"
+    set_fact:
+      Nat_gw_id: "{{ result.stdout }}"
+  - debug:
+      msg:
+        - "{{ Nat_gw_id }}" 
