@@ -21,3 +21,4 @@
   - name: Set EIP in variable
     set_fact:
       my_elastic_ip: "{{ eip.stdout }}"
+#
