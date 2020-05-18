@@ -1,4 +1,5 @@
 ---
+  - import_playbook: AwsSetupOnLocalHost.yml
   - import_playbook: CreateVpc.yml
   - import_playbook: CreateIGW.yml
   - import_playbook: CreateSubnets.yml
