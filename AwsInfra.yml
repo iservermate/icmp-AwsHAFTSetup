@@ -2,5 +2,6 @@
   - import_playbook: CreateVpc.yml
   - import_playbook: CreateIGW.yml
   - import_playbook: CreateSubnets.yml
+  - import_playbook: CreateEip.yml
   - import_playbook: CreateRT.yml
   - import_playbook: PrintIds.yml
