@@ -8,6 +8,12 @@
       tags:
         Name: "{{ PrivRT }}"
       state: present
+      subnets:
+        - "{{ PrivSub_1A }}"
+        - "{{ PrivSub_1B }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw_id }}"
     register: result
   - name: "Set Private Routing Table id in Variable"
     set_fact:

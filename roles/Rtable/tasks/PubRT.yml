@@ -8,6 +8,12 @@
       tags:
         Name: "{{ PubRT }}"
       state: present
+      subnets:
+        - "{{ PubSub_1AA }}"
+        - "{{ PubSub_1B }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw_id }}"
     register: result
   - name: "Set Public Routing Table id in Variable"
     set_fact:

@@ -8,6 +8,7 @@
       region: "{{ region_id }}"
       az: "{{ AZ_1 }}"
       vpc_id: "{{ vpc_id }}"
+      map_public: yes
       tags:
         Name: "{{ PubSub1a }}"
     register: result
@@ -28,6 +29,7 @@
       region: "{{ region_id }}"
       az: "{{ AZ_2 }}"
       vpc_id: "{{ vpc_id }}"
+      map_public: yes
       tags:
         Name: "{{ PubSub1b }}"
     register: result
