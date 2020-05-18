@@ -1,0 +1,18 @@
+---
+  - name: "Print VPC components IDs"
+    hosts: local
+    gather_facts: off
+    tasks:
+    - debug:
+        msg:
+          - "Region ID= {{ region_id}}"
+          - "VPC ID= {{ vpc_id }}"
+          - "Internet Gateway ID= {{ igw_id }}"
+          - "Public Routing Table ID= {{ pubrt_id }}"
+          - "Private Rouiting Table ID= {{ privrt_id }}"
+          - "1st Public Subnet ID in AZ-1= {{ PubSub_1AA }}"
+          - "1st Private Subnet ID in AZ-1= {{ PrivSub_1A }}"
+          - "2nd Public Subnet ID in AZ-2= {{ PubSub_1B }}"
+          - "2nd Private Subnet ID in AZ-2= {{ PrivSub_1A }}"
+#          - "Bastion Host= {{  }}"
+#          - "NAT Gateway= {{  }}"

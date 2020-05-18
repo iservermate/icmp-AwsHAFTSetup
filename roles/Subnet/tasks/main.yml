@@ -1,0 +1,8 @@
+---
+# tasks file for Subnet
+  - import_tasks: PubSubnet.yml
+    tags:
+      - "PubSubinAZ1n2"
+  - import_tasks: PrivSubnet.yml
+    tags:
+      - "PrivSubinAZ1n2"

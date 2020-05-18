@@ -12,14 +12,12 @@
       dns_support: yes
       state: present
     register: result
-
   - name: "Settings region in Variable"
     set_fact:
       region_id: "{{ RegionName }}"
   - debug:
       msg:
       - "{{ region_id }}"
-
 
   - name: "Set VPC id in Variable"
     set_fact:
@@ -33,15 +31,77 @@
       IGW: "{{ IGWName }}"
   - debug:
       msg: "{{ IGW }}"
-
+#public RT
   - name: "Set Public Routing Table Name in Variable"
     set_fact:
-      PubRT: "{{ PubRtable }}"
+      PubRT: "{{ PubRtable_a_01 }}"
   - debug:
       msg: "{{ PubRT }}"
-
+#Private RT
   - name: "Set Private Routing Table Name in Variable"
     set_fact:
-      PrivRT: "{{ PrivRtable }}"
+      PrivRT: "{{ PrivRtable_b_01 }}"
   - debug:
       msg: "{{ PrivRT }}"
+#Pubsub AZ-1
+  - name: "Set Public AZ-1 Name in Variable"
+    set_fact:
+      AZ_1: "{{ ca_central_1A }}"
+  - debug:
+      msg: "{{ AZ_1 }}"
+
+  - name: "Set Public Subnet Name in Variable"
+    set_fact:
+      PubSub1a: "{{ PubSubnet_a_1 }}"
+  - debug:
+      msg: "{{ PubSub1a }}"
+
+  - name: "Set Public CIDR in Variable"
+    set_fact:
+      PubCidr_1a: "{{ PubCIDR_a_1 }}"
+  - debug:
+      msg: "{{ PubCidr_1a }}"
+#Privsub AZ-1
+  - name: "Set Private Subnet Name in Variable"
+    set_fact:
+      PriSub_1a: "{{ PriSubnet_a_1 }}"
+  - debug:
+      msg: "{{ PriSub_1a }}"
+
+  - name: "Set Private CIDR in Variable"
+    set_fact:
+      PriCidr_1a: "{{ PriCIDR_a_1 }}"
+  - debug:
+      msg: "{{ PriCidr_1a }}"
+
+##AZ-2
+#Pubsub AZ-2
+  - name: "Set Public AZ-1 Name in Variable"
+    set_fact:
+      AZ_2: "{{ ca_central_1B }}"
+  - debug:
+      msg: "{{ AZ_2 }}"
+
+  - name: "Set AZ-2 Public Subnet Name in Variable"
+    set_fact:
+      PubSub1b: "{{ PubSubnet_b_1 }}"
+  - debug:
+      msg: "{{ PubSub1b }}"
+
+  - name: "Set AZ-2 Public CIDR in Variable"
+    set_fact:
+      PubCidr_1b: "{{ PubCIDR_b_1 }}"
+  - debug:
+      msg: "{{ PubCidr_1b }}"
+#Privsub AZ-2
+  - name: "Set AZ-2 Private Subnet Name in Variable"
+    set_fact:
+      PriSub_1b: "{{ PriSubnet_b_1 }}"
+  - debug:
+      msg: "{{ PriSub_1b }}"
+
+  - name: "Set AZ-2 Private CIDR in Variable"
+    set_fact:
+      PriCidr_1b: "{{ PriCIDR_b_1 }}"
+  - debug:
+      msg: "{{ PriCidr_1b }}"
