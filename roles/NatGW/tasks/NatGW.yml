@@ -13,3 +13,4 @@
   - debug:
       msg:
         - "{{ Nat_gw_id }}" 
+#
