@@ -16,23 +16,23 @@
 
   - name: Create .aws directory
     file:
-      path: /home/prod_ansible/.aws
+      path: ~/.aws
       state: directory
-      owner: prod_ansible
-      group: prod_ansible
+      owner: mkazmi
+      group: staff
 
   - name: "Copy config "
     template:
       src: config.j2
-      dest: /home/prod_ansible/.aws/config
-      owner: prod_ansible
-      group: prod_ansible
+      dest: ~/.aws/config
+      owner: mkazmi
+      group: staff
       mode: '0600'
 
   - name: "Copy credentials"
     copy:
       src: credentials
-      dest: /home/prod_ansible/.aws/credentials
-      owner: prod_ansible
-      group: prod_ansible
+      dest: ~/.aws/credentials
+      owner: mkazmi
+      group: staff
       mode: '0600'

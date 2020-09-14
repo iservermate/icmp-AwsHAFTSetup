@@ -97,7 +97,7 @@
         default: ami-054362537f5132ce2
 
       - name: BhostN
-        prompt: "Enter AMI Id for Bastion Host: "
+        prompt: "Enter Name for Bastion Host: "
         private: no
         default: icmpbhost-a-1
 
