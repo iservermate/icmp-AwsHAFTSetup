@@ -1,7 +1,7 @@
 #For AWS automation
 Aws - Setup Amazon's Highlty available and fault tolerance infrastructure 
 
-# On my MAC
+# Setup AWSCli On MAC
 ansible-playbook -i invenotry/all AwsSetupOnLocalHost.yml --ask-vault-pass -b -K
 
 ToDo:
