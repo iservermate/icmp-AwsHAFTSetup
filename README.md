@@ -1,13 +1,10 @@
-# Aws
-For AWS Automation
-
-# cd /home/prod_ansible/github/Aws
-# ansible-playbook -i invenotry/all AwsSetupOnLocalHost.yml --ask-vault-pass
+#For AWS automation
+Aws - Setup Amazon's Highlty available and fault tolerance infrastructure 
 
 # On my MAC
-# ansible-playbook -i invenotry/all AwsSetupOnLocalHost.yml --ask-vault-pass -b -K
+ansible-playbook -i invenotry/all AwsSetupOnLocalHost.yml --ask-vault-pass -b -K
 
-Pending to automate:
-#VOLUMES NAME
- #My ip for SG
- #add security group and Bastion host id in PrintIds.yml
+ToDo:
+ - VOLUMES NAME
+ - My ip for SG
+ - Add security group and Bastion host id in PrintIds.yml
