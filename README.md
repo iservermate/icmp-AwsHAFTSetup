@@ -1,4 +1,4 @@
-# AWS Highly Availablle Fault Tolerant Infrastruccture. 
+# AWS Highly Availablle Fault Tolerance Infrastruccture. 
 #For AWS automation
 Aws - Setup Amazon's Highlty available and fault tolerance infrastructure 
 
